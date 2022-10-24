@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>Pogoda</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <script src="page.js"></script>
+    <div id="container">
+        <div class="header">
+            <p class="title">Pogoda</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Wpisz nazwę miasta..." id="search-input"/><button id="search-button">Szukaj</button>
+            </div>
+            <div id="error" style="display:none;">Nie udało się wczytać pogody dla podanego miasta.</div>
+        </div>
+        <div id="content" style="display:none;">
+            <div id="content-header">
+                <div class="small">
+                    <img class="icon"/>
+                    <p><span class="weather-title"></span></p>
+                </div>
+                <div class="small centered">
+                    <p class="big"><span class="temperature"></span>°C</p>
+                    <p class="bold">Odczuwalna:</p>
+                    <p><span class="feels-like"></span>°C</p>
+                </div>
+                <div>
+                    <p class="bold">Ciśnienie:</p>
+                    <p><span class="pressure"></span> hPa</p>
+                    <p class="bold">Wilgotność:</p>
+                    <p><span class="humidity"></span>%</p>
+                </div>
+                <div>
+                    <p class="bold">Widoczność:</p>
+                    <p><span class="visibility"></span>km</p>
+                    <p class="bold">Wiatr:</p>
+                    <p><span class="wind-speed"></span>km/h, <img class="wind-img" src="media/arrow.svg"/></p>
+                </div>
+                <div>
+                    <p class="bold">Zachmurzenie:</p>
+                    <p><span class="clouds"></span>%</p>
+                    <p class="bold">Deszcz:</p>
+                    <p><span class="rain"></span>mm</p>
+                </div>
+                <div>
+                    <p class="bold msize"><span class="city"></span>, <span class="country"></span></p>
+                    <p><span class="time"></span></p>
+                </div>
+            </div>
+            <p class="p-header">Pogoda na 5 dni</p>
+            <div id="forecast"></div>
+        </div>
+    </div>
+</body>
+</html>
