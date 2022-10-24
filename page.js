@@ -14,7 +14,7 @@ function showWeather() {
         //Pogoda na teraz
         var city = $("#search-input").val();
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&lang=pl&APPID=e12eb41847cffd3e2d466bef17886db9",
+            url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&lang=pl&APPID=e12eb41847cffd3e2d466bef17886db9",
             dataType: "json"
         }).done((data) => {
             console.log(data);
@@ -56,7 +56,7 @@ function showWeather() {
 
         //Pogoda na następne 5 dni
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&lang=pl&APPID=e12eb41847cffd3e2d466bef17886db9",
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&lang=pl&APPID=e12eb41847cffd3e2d466bef17886db9",
             dataType: "json"
         }).done((data) => {
             $("#forecast").html(null)
