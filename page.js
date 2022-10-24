@@ -1,9 +1,14 @@
 $(() => {
     $("#search-button").click(() => {
         showWeatherCity($("#search-input").val());
+        $('#forecast').scrollLeft(0);
     })
     $("#search-input").keypress(e => {
-        if (e.which == 13) showWeatherCity($(e.currentTarget).val());
+        if (e.which == 13) 
+        {
+            showWeatherCity($(e.currentTarget).val());
+            $('#forecast').scrollLeft(0);
+        }
     });
 
     if ("geolocation" in navigator) {
