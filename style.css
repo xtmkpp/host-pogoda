@@ -6,10 +6,6 @@
     font-family: Monotype Corsiva;
 }
 
-.podtitle {
-    font-size: 1.5em;
-}
-
 #error {
     width: fit-content;
     margin: auto;
@@ -17,7 +13,7 @@
     padding: 20px;
     text-align: center;
     font-size: 1.5em;
-    box-shadow: 2px 2px 2px #000
+    box-shadow: 2px 2px 2px #000;
 }
 
 .header {
@@ -32,7 +28,8 @@ body {
     margin: 0;
 }
 
-html,body {
+html,
+body {
     width: 100%;
     height: 100%;
 }
@@ -48,11 +45,6 @@ html,body {
     flex-direction: column;
 }
 
-#footer {
-    position: fixed;
-    bottom:0;
-}
-
 .weather-element img {
     width: 100px;
     height: 100px;
@@ -64,19 +56,13 @@ html,body {
     box-shadow: 2px 2px 2px black;
     width: 70%;
     margin: auto;
-    transition: opacity 0.5s linear;
 }
 
 .bold {
     font-weight: bold;
 }
 
-.temp p {
-    font-size: 3.5em;
-}
-
-
-#content-header p{
+#content-header p {
     font-size: 1em;
 }
 
@@ -108,7 +94,8 @@ html,body {
     border-radius: 0 10px 10px 0;
 }
 
-#search-input, #search-button {
+#search-input,
+#search-button {
     font-size: 36px;
     margin: 0;
     padding: 5px;
@@ -126,12 +113,12 @@ html,body {
 }
 
 #search-button {
-    background-color:#548fff;
+    background-color: #548fff;
     color: white;
     width: 30%;
 }
 
-.p-header {
+.forecast-header {
     text-align: center;
     font-size: 2em;
     margin: 10px 0;
@@ -144,15 +131,15 @@ html,body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    padding:20px;
+    padding: 20px;
     align-items: center;
 }
 
-#content-header > span {
+#content-header>span {
     display: block;
 }
 
-#content-header > div {
+#content-header>div {
     flex: 1;
     padding: 10px;
 }
@@ -180,7 +167,7 @@ html,body {
     font-size: 4em;
     font-weight: 700;
     color: white;
-    text-shadow: 1px 1px 5px black;
+    text-shadow: 1px 1px 3px black;
 }
 
 p {
@@ -191,16 +178,19 @@ p {
     #content {
         width: 95%;
     }
+
     .search-bar {
         display: block;
         width: 100%;
         border-radius: 0;
     }
+
     #search-input {
         width: 100%;
         border-radius: 0;
     }
-    #search-button{
+
+    #search-button {
         width: 100%;
         border-radius: 0;
     }
