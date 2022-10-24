@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>Pogoda</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
@@ -20,14 +20,14 @@
         <div class="header">
             <p class="title">Pogoda</p>
             <div class="search-bar">
-                <input type="text" placeholder="Wpisz nazwę miasta..." id="search-input"/><button id="search-button">Szukaj</button>
+                <input type="text" placeholder="Wpisz nazwę miasta..." id="search-input" /><button id="search-button">Szukaj</button>
             </div>
             <div id="error" style="display:none;">Nie udało się wczytać pogody dla podanego miasta.</div>
         </div>
         <div id="content" style="display:none;">
             <div id="content-header">
                 <div class="small">
-                    <img class="icon"/>
+                    <img class="icon" />
                     <p><span class="weather-title"></span></p>
                 </div>
                 <div class="small centered">
@@ -45,7 +45,7 @@
                     <p class="bold">Widoczność:</p>
                     <p><span class="visibility"></span>km</p>
                     <p class="bold">Wiatr:</p>
-                    <p><span class="wind-speed"></span>km/h, <img class="wind-img" src="media/arrow.svg"/></p>
+                    <p><span class="wind-speed"></span>km/h, <img class="wind-img" src="media/arrow.svg" /></p>
                 </div>
                 <div>
                     <p class="bold">Zachmurzenie:</p>
@@ -63,4 +63,5 @@
         </div>
     </div>
 </body>
+
 </html>
