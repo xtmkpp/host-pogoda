@@ -214,9 +214,24 @@ p {
     transition-duration: .2s;
 }
 
+#other {
+    display: inherit;
+}
+
+#other div{
+    padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    #content-header {
+        display:flex;
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 800px) {
     #content {
-        width: 95%;
+        width: 90%;
     }
 
     .search-bar {

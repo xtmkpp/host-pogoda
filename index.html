@@ -20,7 +20,7 @@
         <div class="header">
             <p class="title">Pogoda</p>
             <div class="search-bar">
-                <input type="text" maxlength="30" placeholder="Wpisz nazwę miasta..." id="search-input" /><button id="search-button">Szukaj</button>
+                <input type="text" maxlength="85" placeholder="Wpisz nazwę miasta..." id="search-input" /><button id="search-button">Szukaj</button>
             </div>
             <div id="error" style="display:none;">Nie udało się wczytać pogody dla podanego miasta.</div>
         </div>
@@ -35,25 +35,27 @@
                     <p class="bold">Odczuwalna:</p>
                     <p><span class="feels-like"></span>°C</p>
                 </div>
-                <div>
-                    <p class="bold">Ciśnienie:</p>
-                    <p><span class="pressure"></span> hPa</p>
-                    <p class="bold">Wilgotność:</p>
-                    <p><span class="humidity"></span>%</p>
+                <div id="other">
+                    <div>
+                        <p class="bold"><img src="media/other/pressure.png" width="60"><br>Ciśnienie:</p>
+                        <p><span class="pressure"></span> hPa</p>
+                        <p class="bold"><img src="media/other/humidity.png" width="60"><br>Wilgotność:</p>
+                        <p><span class="humidity"></span>%</p>
+                    </div>
+                    <div>
+                        <p class="bold"><img src="media/other/visibility.png" width="60"><br>Widoczność:</p>
+                        <p><span class="visibility"></span>km</p>
+                        <p class="bold"><img src="media/other/wind.png" width="60"><br>Wiatr:</p>
+                        <p><span class="wind-speed"></span>km/h, <img class="wind-img" src="media/arrow.svg" /></p>
+                    </div>
+                    <div>
+                        <p class="bold"><img src="media/other/clouds.png" width="60"><br>Zachmurzenie:</p>
+                        <p><span class="clouds"></span>%</p>
+                        <p class="bold"><img src="media/other/rain.png" width="60"><br>Deszcz:</p>
+                        <p><span class="rain"></span>mm</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="bold">Widoczność:</p>
-                    <p><span class="visibility"></span>km</p>
-                    <p class="bold">Wiatr:</p>
-                    <p><span class="wind-speed"></span>km/h, <img class="wind-img" src="media/arrow.svg" /></p>
-                </div>
-                <div>
-                    <p class="bold">Zachmurzenie:</p>
-                    <p><span class="clouds"></span>%</p>
-                    <p class="bold">Deszcz:</p>
-                    <p><span class="rain"></span>mm</p>
-                </div>
-                <div>
+                <div id="city">
                     <p class="bold msize"><span class="city"></span>, <span class="country"></span></p>
                     <p><span class="time"></span></p>
                 </div>
