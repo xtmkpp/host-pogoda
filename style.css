@@ -1,9 +1,9 @@
 * {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
 .title {
-    font-family: Monotype Corsiva;
+    font-family: 'Merienda One', cursive;
 }
 
 #error {
@@ -48,8 +48,7 @@ body {
 }
 
 .weather-element img {
-    width: 100px;
-    height: 100px;
+    height: 7em;
 }
 
 #content {
@@ -106,7 +105,6 @@ body {
     outline: none;
     width: 70%;
     box-sizing: border-box;
-    transition-duration: .2s;
     box-shadow: 2px 2px 2px black;
 }
 
@@ -120,7 +118,7 @@ body {
     background-color: #89A8C7;
     color: white;
     width: 30%;
-    
+
 }
 
 .forecast-header {
@@ -138,6 +136,7 @@ body {
     text-align: center;
     padding: 20px;
     align-items: center;
+    overflow: auto;
 }
 
 #content-header>span {
@@ -216,15 +215,15 @@ p {
 }
 
 #other {
-    display: inherit;
+    display: flex;
 }
 
-#other div{
-    padding: 10px;
+#other div {
+    margin: 10px;
 }
 
 .weatherOtherDay {
-    display: inherit;
+    display: flex;
 }
 
 .day {
@@ -242,19 +241,22 @@ p {
     width: 100%;
     margin: 0;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 2.5em;
     color: #435261;
+}
+
+.o-icon {
+    display: block;
+    margin: auto;
+    height: 4em;
 }
 
 @media screen and (max-width: 1000px) {
     #content-header {
-        display:flex;
         flex-direction: column;
         padding: 0;
         margin: 0;
     }
-
-    
 }
 
 @media screen and (max-width: 800px) {
@@ -262,12 +264,7 @@ p {
         width: 95%;
     }
 
-    div#other {
-        padding: 0;
-    }
-
     .search-bar {
-        display: block;
         width: 100%;
         border-radius: 10px;
     }
@@ -275,6 +272,7 @@ p {
     #search-input {
         width: 100%;
         border-radius: 10px 10px 0 0;
+        text-align: center;
     }
 
     #search-button {

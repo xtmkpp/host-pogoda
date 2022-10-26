@@ -1,14 +1,10 @@
 $(() => {
     $("#search-button").click(() => {
         showWeatherCity($("#search-input").val());
-        $('#forecast').scrollLeft(0);
     })
     $("#search-input").keypress(e => {
-        if (e.which == 13) 
-        {
+        if (e.which == 13) {
             showWeatherCity($(e.currentTarget).val());
-            $('#forecast').scrollLeft(0);
-            $("#search-button").addClass("active");
         }
     });
 
@@ -70,41 +66,39 @@ function showWeather(queryParam) {
                     "<p class='bold'>" + Math.round(e.main.temp) + "°C</p>" +
                     "<p>" + godzina + "</p>" +
                     "<p class='data'>" + data + "</p>"
-                    );
-                    
-                    $("#forecast").append(el);
-                });
+                );
 
-                var dates = $(".data");
-                var datObj = {};
+                $("#forecast").append(el);
+            });
 
-                dates.each(function() 
-                {
-                    datObj[$(this).text()] = datObj[$(this).text()] + 1 || 1;
-                });
-                dateArray = Object.entries(datObj);
-                dateArrayLen = dateArray.length;
-                
-                
-                var j = 0;
-                var date = [];
-                for (var i = 0; i < dateArrayLen; i++)
-                {
-                    $(".weather-element").filter(':eq(' + j + '),:lt(' + (j + dateArray[i][1]) + '):gt(' + j + ')').wrapAll("<div class='day' />").wrapAll("<div class='weatherOtherDay' />");
-                    j = j + dateArray[i][1];
-                }
+            var dates = $(".data");
+            var datObj = {};
 
-                $(".day").append("<span class='weekday'></span>")
+            dates.each(function () {
+                datObj[$(this).text()] = datObj[$(this).text()] + 1 || 1;
+            });
+            dateArray = Object.entries(datObj);
+            dateArrayLen = dateArray.length;
 
-                for (var i = 0; i < dateArrayLen; i++)
-                {
-                    date[i] = dateArray[i][0].split(".").reverse().join("-");
-                    let d = new Date(date[i]);
-                    let day = d.toLocaleDateString('pl', {weekday:'short'});
-                    $(".weekday")[i].append(day);
-                }
-        
+
+            var j = 0;
+            var date = [];
+            for (var i = 0; i < dateArrayLen; i++) {
+                $(".weather-element").filter(':eq(' + j + '),:lt(' + (j + dateArray[i][1]) + '):gt(' + j + ')').wrapAll("<div class='day' />").wrapAll("<div class='weatherOtherDay' />");
+                j = j + dateArray[i][1];
+            }
+
+            $(".day").append("<span class='weekday'></span>")
+
+            for (var i = 0; i < dateArrayLen; i++) {
+                date[i] = dateArray[i][0].split(".").reverse().join("-");
+                let d = new Date(date[i]);
+                let day = d.toLocaleDateString('pl', { weekday: 'short' });
+                $(".weekday")[i].append(day);
+            }
+
             $("#content").slideDown(500);
+            $('#forecast').scrollLeft(0);
         }).fail(() => {
             $("#error").slideDown(400);
         });
