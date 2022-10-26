@@ -8,6 +8,7 @@ $(() => {
         {
             showWeatherCity($(e.currentTarget).val());
             $('#forecast').scrollLeft(0);
+            $("#search-button").addClass("active");
         }
     });
 
@@ -64,16 +65,45 @@ function showWeather(queryParam) {
                 var data = d.getDate() + "." + (d.getMonth() + 1).toString().padStart(2, '0') + "." + d.getFullYear();
                 var godzina = d.getHours().toString().padStart(2, '0') + ":" + d.getMinutes().toString().padStart(2, '0');
 
-
                 el.append(
                     "<img src='media/icons/" + e.weather[0].icon + ".png' alt='" + e.weather[0].description + "'/>" +
                     "<p class='bold'>" + Math.round(e.main.temp) + "°C</p>" +
                     "<p>" + godzina + "</p>" +
-                    "<p>" + data + "</p>"
-                );
+                    "<p class='data'>" + data + "</p>"
+                    );
+                    
+                    $("#forecast").append(el);
+                });
 
-                $("#forecast").append(el);
-            });
+                var dates = $(".data");
+                var datObj = {};
+
+                dates.each(function() 
+                {
+                    datObj[$(this).text()] = datObj[$(this).text()] + 1 || 1;
+                });
+                dateArray = Object.entries(datObj);
+                dateArrayLen = dateArray.length;
+                
+                
+                var j = 0;
+                var date = [];
+                for (var i = 0; i < dateArrayLen; i++)
+                {
+                    $(".weather-element").filter(':eq(' + j + '),:lt(' + (j + dateArray[i][1]) + '):gt(' + j + ')').wrapAll("<div class='day' />").wrapAll("<div class='weatherOtherDay' />");
+                    j = j + dateArray[i][1];
+                }
+
+                $(".day").append("<span class='weekday'></span>")
+
+                for (var i = 0; i < dateArrayLen; i++)
+                {
+                    date[i] = dateArray[i][0].split(".").reverse().join("-");
+                    let d = new Date(date[i]);
+                    let day = d.toLocaleDateString('pl', {weekday:'short'});
+                    $(".weekday")[i].append(day);
+                }
+        
             $("#content").slideDown(500);
         }).fail(() => {
             $("#error").slideDown(400);
