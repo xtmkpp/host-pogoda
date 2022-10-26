@@ -107,11 +107,11 @@ body {
     width: 70%;
     box-sizing: border-box;
     transition-duration: .2s;
+    box-shadow: 2px 2px 2px black;
 }
 
 .search-bar {
     margin: 10px auto;
-    box-shadow: 2px 2px 2px black;
     width: 70%;
     border-radius: 10px;
 }
@@ -120,6 +120,7 @@ body {
     background-color: #89A8C7;
     color: white;
     width: 30%;
+    
 }
 
 .forecast-header {
